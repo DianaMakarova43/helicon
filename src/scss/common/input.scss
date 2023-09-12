@@ -1,0 +1,13 @@
+.custom-input {
+  padding: 15px 0 15px 15px;
+  border-radius: 3px;
+  background-color: #f3f3f3;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.custom-input.active {
+  border: 1px solid rgba(190, 23, 4, 0.9);
+  outline: 3.5px solid rgba(190, 23, 4, 0.4);
+}
