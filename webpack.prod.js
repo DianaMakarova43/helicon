@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 module.exports = {
@@ -104,6 +105,19 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: "./src/assets",
+                    to: "./assets",
+                    globOptions: {
+                        copyUnmodified: true,
+                        force: false,
+                    },
+                },
+            ],
+        }),
 
         new HtmlWebpackPlugin({
             template: './src/index.html'
